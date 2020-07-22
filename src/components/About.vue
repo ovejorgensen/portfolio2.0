@@ -18,7 +18,6 @@ export default {
     height: 100%;
   }
   .hello h1, .hello p {
-    color: black;
     position: relative;
     top: 45%;
     transform: translateY(-50%);

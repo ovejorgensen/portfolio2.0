@@ -1,7 +1,7 @@
 <template>
-  <div id="app">
+  <v-app>
     <SliderMain msg="Hey man"/>
-  </div>
+  </v-app>
 </template>
 
 <script>

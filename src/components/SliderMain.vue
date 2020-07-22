@@ -6,15 +6,27 @@
         <div class="arrow" @click="$refs.fullpage.api.moveSectionDown()"></div>
       </div>
       <div class="section">
+        <Toolbar @toggle="redirect" />
         <About />
       </div>
       <div class="section">
+        <Toolbar @toggle="redirect" />
+
         <LandingPage />
       </div>
       <div class="section">
+        <Toolbar @toggle="redirect" />
+
         <LandingPage />
       </div>
       <div class="section">
+        <Toolbar @toggle="redirect" />
+
+        <LandingPage />
+      </div>
+      <div class="section">
+        <Toolbar @toggle="redirect" />
+
         <LandingPage />
       </div>
     </full-page>
@@ -24,22 +36,36 @@
 <script>
 import LandingPage from "./LandingPage";
 import About from "./About";
+import Toolbar from "./Toolbar";
 
 export default {
   name: "SliderMain",
   components: {
     LandingPage,
-    About
+    About,
+    Toolbar
   },
   data() {
     return {
       options: {
         licenseKey: "YOUR_KEY_HERE",
-        // menu: '#menu',
-        anchors: ["page1", "page2", "page3", "page4", "page5"],
-        sectionsColor: ["#264653", "#FFFFFF", "#E9C46A", "#F4A261", "#E76F51"]
+        anchors: ["home", "about", "work", "education", "projects", "contact"],
+        sectionsColor: [
+          "#264653",
+          "#E76F51",
+          "#E9C46A",
+          "#F4A261",
+          "#E76F51",
+          "#264653"
+        ]
       }
     };
+  },
+  methods: {
+    redirect(data) {
+      if (data === "Contact Me") data = "contact";
+      this.$refs.fullpage.api.moveTo(data.toLowerCase());
+    }
   }
 };
 </script>

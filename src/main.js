@@ -9,10 +9,13 @@ Amplify.configure(aws_exports);
 
 //Fullpage.js
 import VueFullPage from 'vue-fullpage.js'
+
+import vuetify from './plugins/vuetify';
 Vue.use(VueFullPage);
 
 Vue.config.productionTip = false
 
 new Vue({
-  render: h => h(App),
+  vuetify,
+  render: h => h(App)
 }).$mount('#app')
