@@ -8,6 +8,7 @@ import aws_exports from './aws-exports';
 Amplify.configure(aws_exports);
 
 //Fullpage.js
+import 'fullpage.js/vendors/scrolloverflow.min.js'
 import VueFullPage from 'vue-fullpage.js'
 
 import vuetify from './plugins/vuetify';

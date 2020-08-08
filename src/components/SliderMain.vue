@@ -6,28 +6,27 @@
         <div class="arrow" @click="$refs.fullpage.api.moveSectionDown()"></div>
       </div>
       <div class="section">
-        <Toolbar @toggle="redirect" />
+        <Toolbar @toggle="redirect" v-bind:page="this.page"/>
         <About />
       </div>
       <div class="section">
-        <Toolbar @toggle="redirect" />
+        <Toolbar @toggle="redirect" v-bind:page="this.page"/>
 
         <LandingPage />
       </div>
       <div class="section">
-        <Toolbar @toggle="redirect" />
+        <Toolbar @toggle="redirect" v-bind:page="this.page"/>
 
         <LandingPage />
       </div>
       <div class="section">
-        <Toolbar @toggle="redirect" />
+        <Toolbar @toggle="redirect" v-bind:page="this.page"/>
 
         <LandingPage />
       </div>
       <div class="section">
-        <Toolbar @toggle="redirect" />
-
-        <LandingPage />
+        <Toolbar @toggle="redirect" v-bind:page="this.page"/>
+        <Projects />
       </div>
     </full-page>
   </div>
@@ -37,19 +36,23 @@
 import LandingPage from "./LandingPage";
 import About from "./About";
 import Toolbar from "./Toolbar";
+import Projects from "./Projects";
 
 export default {
   name: "SliderMain",
   components: {
     LandingPage,
     About,
-    Toolbar
+    Toolbar,
+    Projects
   },
   data() {
     return {
+      page: 0,
       options: {
-        licenseKey: "YOUR_KEY_HERE",
+        licenseKey: "&X18O?Q$d9",
         anchors: ["home", "about", "work", "education", "projects", "contact"],
+        scrollOverflow: true,
         sectionsColor: [
           "#264653",
           "#E76F51",
@@ -63,6 +66,12 @@ export default {
   },
   methods: {
     redirect(data) {
+      if(data=="Home") this.page=0;
+      if(data=="About") this.page=1;
+      if(data=="Work") this.page=2;
+      if(data=="Education") this.page=3;
+      if(data=="Projects") this.page=4;
+      if(data=="Contact Me") this.page=5;
       if (data === "Contact Me") data = "contact";
       this.$refs.fullpage.api.moveTo(data.toLowerCase());
     }
@@ -74,6 +83,7 @@ export default {
 <style scoped>
 .section {
   position: relative;
+  overflow: auto !important;
 }
 .arrow,
 .arrow:before {

@@ -17,7 +17,7 @@
       <v-list>
         <v-list-item two-line>
           <v-list-item-avatar>
-            <v-img src="https://randomuser.me/api/portraits/men/81.jpg"></v-img>
+            <v-img src="https://media-exp1.licdn.com/dms/image/C4D03AQGiMhIUpjaU6g/profile-displayphoto-shrink_200_200/0?e=1602115200&v=beta&t=-YJnVNtw7dkhIBr20o6sXv3aU08xDkiAoudG51wOkbw"></v-img>
           </v-list-item-avatar>
           <v-list-item-content>
             <v-list-item-title class="title">Ove Jørgensen</v-list-item-title>
@@ -27,7 +27,7 @@
       </v-list>
       <v-divider></v-divider>
       <v-list nav dense>
-        <v-list-item-group v-model="item" color="primary">
+        <v-list-item-group v-model="page" color="primary">
           <v-list-item v-for="(item, i) in items" :key="i">
             <v-list-item-icon>
               <v-icon v-text="item.icon"></v-icon>
@@ -45,10 +45,12 @@
 <script>
 export default {
   name: "Toolbar",
+  props: {
+    page: Number
+  },
   data() {
     return {
       drawer: null,
-      item: 0,
       items: [
         { text: "Home", icon: "mdi-star" },
         { text: "About", icon: "mdi-account" },
@@ -61,8 +63,7 @@ export default {
   },
   methods: {
     redirect(here) {
-      // let outgoing = here.toLowerCase();
-      // this.$parent.redirect();
+      if (this.drawer) this.drawer=!this.drawer;
       this.$emit('toggle', here)
     }
   }
@@ -72,7 +73,7 @@ export default {
 <style>
 .v-toolbar {
   box-shadow: none !important;
-  position: absolute;
+  position: fixed;
   width: 100%;
   z-index: 100;
 }
@@ -81,5 +82,6 @@ export default {
 }
 #drawer {
   z-index: 110;
+  position: absolute;
 }
 </style>
