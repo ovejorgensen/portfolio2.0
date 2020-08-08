@@ -3,8 +3,12 @@
     <v-row class="main-row" align="center">
       <v-col v-for="card in cards" :key="card.title" cols="12" lg="4" md="6" sm="12" xs="12">
         <v-card class="mx-auto cards" max-width="400">
-          <v-img class="white--text align-end" height="200px" src="../../src/assets/galaga.png">
-            <v-card-title v-text="card.title"></v-card-title>
+          <v-img
+            class="white--text align-end"
+            height="200px"
+            v-bind:src="require('../../src/assets/'+card.src)"
+          >
+            <v-card-title class="ctitle" v-text="card.title"></v-card-title>
           </v-img>
 
           <v-card-subtitle class="pb-0" v-text="card.subtitle"></v-card-subtitle>
@@ -12,7 +16,7 @@
           <v-card-text class="text--primary" v-text="card.info"></v-card-text>
 
           <v-card-actions>
-            <v-btn color="orange" text>Try it!</v-btn>
+            <v-btn color="orange" v-text="card.open"></v-btn>
 
             <v-btn color="orange" text>GitHub</v-btn>
           </v-card-actions>
@@ -28,32 +32,18 @@ export default {
   data: () => ({
     cards: [
       {
-        title: "Galaga",
-        subtitle: "Retro Arcade Game",
-        info: "Arcade game created in JavaScript with p5.js",
-        src: "../../src/assets/galaga.png",
-        flex: 12
+        title: "Autonomomus Drone Inspection",
+        subtitle: "Data Presentation and Analysis",
+        info: "Bachelor's Project presented for a degree in computer science",
+        open: "More info",
+        src: "bach.png"
       },
       {
         title: "Galaga2",
         subtitle: "Retro Arcade Game",
         info: "Arcade game created in JavaScript with p5.js",
-        src: "../../src/assets/galaga.png",
-        flex: 12
-      },
-      {
-        title: "Galaga3",
-        subtitle: "Retro Arcade Game",
-        info: "Arcade game created in JavaScript with p5.js",
-        src: "../../src/assets/galaga.png",
-        flex: 12
-      },
-      {
-        title: "Galaga4",
-        subtitle: "Retro Arcade Game",
-        info: "Arcade game created in JavaScript with p5.js",
-        src: "../../src/assets/galaga.png",
-        flex: 12
+        open: "Try it!",
+        src: "galaga.png"
       }
     ]
   })
@@ -61,10 +51,14 @@ export default {
 </script>
 
 <style>
+.ctitle {
+  text-shadow: -2px 2px 0 #000, 2px 2px 0 #000, 2px -2px 0 #000,
+    -2px -2px 0 #000;
+}
 .contain {
-  position: absolute;
+  position: relative;
+  margin: 0 auto;
   top: 60px;
-  overflow: auto !important;
 }
 .cards {
   position: absolute;

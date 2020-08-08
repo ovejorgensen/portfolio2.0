@@ -22,11 +22,11 @@
       <div class="section">
         <Toolbar @toggle="redirect" v-bind:page="this.page"/>
 
-        <LandingPage />
+        <Projects />
       </div>
       <div class="section">
         <Toolbar @toggle="redirect" v-bind:page="this.page"/>
-        <Projects />
+        <LandingPage />
       </div>
     </full-page>
   </div>
