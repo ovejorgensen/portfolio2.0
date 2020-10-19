@@ -1,16 +1,31 @@
 <template>
   <v-app>
-    <SliderMain msg="Hey man"/>
+    <Hero />
+    <About />
+    <Projects />
+    <Work />
+    <Education />
+    <Footer />
   </v-app>
 </template>
 
 <script>
-import SliderMain from './components/SliderMain.vue'
+import Hero from './components/Hero.vue'
+import Projects from './components/Projects.vue'
+import About from './components/About.vue'
+import Education from './components/Education.vue'
+import Work from './components/Work.vue'
+import Footer from './components/Footer.vue'
 
 export default {
   name: 'App',
   components: {
-    SliderMain
+    Hero,
+    Projects,
+    About,
+    Education,
+    Work,
+    Footer
   }
 }
 </script>
@@ -19,14 +34,12 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 body{
   margin: 0;
-
-  height: 100%;
 }
 #app {
+  position: relative;
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: white;
 }
 </style>

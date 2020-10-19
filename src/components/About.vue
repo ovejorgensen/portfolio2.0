@@ -1,27 +1,30 @@
 <template>
-  <div class="hello">
-        <h1>About</h1>
-        <p>This is where i talk about me</p>
+  <div class="about">
+    <h1>About</h1>
+    <p>
+      Hi, my name is Ove Jørgensen. I am currently enrolled in a Master's degree
+      at the University of Stavanger where I'm studying Data Science. I am also
+      working part time as a software engineer at a small company.
+    </p>
   </div>
 </template>
 
 <script>
 export default {
-    name: 'About'
-}
+  name: "About",
+};
 </script>
 
 <style scoped>
-  .hello {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-  }
-  .hello h1, .hello p {
-    position: relative;
-    top: 45%;
-    transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-  }
+.about {
+  text-align: center;
+}
+.about h1 {
+  margin: 100px 0 50px 0;
+}
+.about p {
+  position: absolute;
+  width: 50%;
+  left: 25%;
+}
 </style>
