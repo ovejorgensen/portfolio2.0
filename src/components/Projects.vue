@@ -11,30 +11,40 @@
         lg="4"
         md="6"
         sm="12"
-        xs="12"
-      >
-        <v-card class="mx-auto cards" max-width="400">
-          <v-img
-            class="white--text align-end"
-            height="200px"
-            v-bind:src="require('../../src/assets/' + card.src)"
-          >
-            <v-card-title class="ctitle" v-text="card.title"></v-card-title>
-          </v-img>
+        xs="12">
+      <!-- :href="project.url" -->
+      <v-card hover height="100%">
+        <v-img
+        height="200px"
+        v-bind:src="require('../../src/assets/' + card.src)">
+        </v-img>
 
+        <v-divider />
+
+        <v-card-text>
+          <h3 v-html="card.title" class="mb-2"></h3>
           <v-card-subtitle
             class="pb-0"
-            v-text="card.subtitle"
-          ></v-card-subtitle>
+            style="padding-top:0"
+            v-text="card.subtitle">
+          </v-card-subtitle>
+        </v-card-text>
 
-          <v-card-text class="text--primary" v-text="card.info"></v-card-text>
-
-          <v-card-actions>
-            <!-- <v-btn color="orange" v-text="card.open"></v-btn> -->
-
-            <v-btn color="orange" :href="card.github" target="_blank" text>GitHub</v-btn>
-          </v-card-actions>
-        </v-card>
+        <v-card-text style="height:60px" class="text--primary" v-text="card.info"></v-card-text>
+        
+        <v-card-actions>
+          <v-btn color="orange" :href="card.github" target="_blank" text>GitHub</v-btn>
+        </v-card-actions>
+        <!-- <v-divider></v-divider> -->
+        <!-- <v-chip
+          class="white--text chip-class"
+          color=info
+          small
+          v-for="tag in card.tags"
+          :key="tag.id">
+          {{ tag }}
+        </v-chip> -->
+      </v-card>
       </v-col>
     </v-row>
   </v-container>
@@ -51,7 +61,8 @@ export default {
         info: "Bachelor's Project presented for a degree in computer science",
         open: "More info",
         src: "bach.png",
-        github: "https://github.com/ovejorgensen/bachelor_website"
+        github: "https://github.com/ovejorgensen/bachelor_website",
+        tags: ["JavaScript", "Node.js", "Express.js", "Three.js"]
       },
       {
         title: "Galaga",
@@ -59,7 +70,8 @@ export default {
         info: "Arcade game created in JavaScript with p5.js",
         open: "Try it!",
         src: "galaga.png",
-        github: "https://github.com/ovejorgensen/galaga"
+        github: "https://github.com/ovejorgensen/galaga",
+        tags: ["JavaScript", "p5.js"]
       },
             {
         title: "My Old Portfolio",
@@ -68,7 +80,8 @@ export default {
         open: "Check it out",
         src: "old.png",
         link: "ovejorgensen.github.io",
-        github: "https://github.com/ovejorgensen/ovejorgensen.github.io"
+        github: "https://github.com/ovejorgensen/ovejorgensen.github.io",
+        tags: ["jQuery", "Bootstrap", "Less"]
       },
     ]
   })
@@ -76,16 +89,15 @@ export default {
 </script>
 
 <style scoped>
+.chip-class{
+  margin: 0 5px 10px 0;
+}
 .contain{
     width: 100vw;
     margin-top: 50px;
 }
 .head {
   margin: 100px 0 50px 0;  
-}
-.ctitle {
-  text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
-    -1px -1px 0 #000;
 }
 .cards {
   text-align: left;
