@@ -13,6 +13,7 @@
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
     "vue-fullpage.js": "^0.1.5",
+    "vue-scrollto": "^2.19.1",
     "vuetify": "^2.2.11"
   },
   "devDependencies": {

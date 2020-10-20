@@ -17,7 +17,7 @@
       <v-list>
         <v-list-item two-line>
           <v-list-item-avatar>
-            <v-img src="https://media-exp1.licdn.com/dms/image/C4D03AQGiMhIUpjaU6g/profile-displayphoto-shrink_200_200/0?e=1602115200&v=beta&t=-YJnVNtw7dkhIBr20o6sXv3aU08xDkiAoudG51wOkbw"></v-img>
+            <v-img src="../../src/assets/ove.jpg"></v-img>
           </v-list-item-avatar>
           <v-list-item-content>
             <v-list-item-title class="title">Ove Jørgensen</v-list-item-title>
@@ -54,9 +54,9 @@ export default {
       items: [
         { text: "Home", icon: "mdi-star" },
         { text: "About", icon: "mdi-account" },
+        { text: "Projects", icon: "mdi-check-circle" },
         { text: "Work", icon: "mdi-folder" },
         { text: "Education", icon: "mdi-school" },
-        { text: "Projects", icon: "mdi-check-circle" },
         { text: "Contact Me", icon: "mdi-email" }
       ]
     };
@@ -72,7 +72,10 @@ export default {
 
 <style>
 .v-toolbar {
-  box-shadow: none !important;
+  /* box-shadow: none !important; */
+  /* position: absolute; */
+  overflow: hidden;
+  top: 0;
   position: fixed;
   width: 100%;
   z-index: 100;

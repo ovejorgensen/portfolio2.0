@@ -1,5 +1,5 @@
 <template>
-  <v-container class="contain">
+  <v-container class="contain projects">
     <v-row  class="head" justify="center">
       <h1>My Projects</h1>
     </v-row>

@@ -1,6 +1,7 @@
 <template>
   <v-app>
     <Hero />
+    <AppBar />
     <About />
     <Projects />
     <Work />
@@ -16,10 +17,12 @@ import About from './components/About.vue'
 import Education from './components/Education.vue'
 import Work from './components/Work.vue'
 import Footer from './components/Footer.vue'
+import AppBar from './components/AppBar.vue'
 
 export default {
   name: 'App',
   components: {
+    AppBar,
     Hero,
     Projects,
     About,

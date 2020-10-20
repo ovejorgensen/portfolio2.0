@@ -7,6 +7,9 @@ import '@aws-amplify/ui-vue';
 import aws_exports from './aws-exports';
 Amplify.configure(aws_exports);
 
+const VueScrollTo = require('vue-scrollto')
+Vue.use(VueScrollTo)
+
 //Fullpage.js
 import 'fullpage.js/vendors/scrolloverflow.min.js'
 import VueFullPage from 'vue-fullpage.js'
