@@ -1,5 +1,5 @@
 <template>
-    <v-navigation-drawer v-model="active" temporary absolute id="drawer">
+    <v-navigation-drawer v-model="active" dark temporary absolute id="drawer">
       <v-list>
         <v-list-item two-line>
           <v-list-item-avatar>
@@ -13,17 +13,14 @@
       </v-list>
       <v-divider></v-divider>
       <v-list nav dense>
-        <v-list-item-group v-model="page" color="primary">
-          <v-list-item v-for="(item, i) in content" :key="i">
+          <v-list-item v-for="(item, i) in content" :key="i" @transitionend="updateDrawer(true)" @click="updateDrawer()" v-scroll-to="item.scroll">
             <v-list-item-icon>
               <v-icon v-text="item.icon"></v-icon>
             </v-list-item-icon>
             <v-list-item-content>
-              <!-- <v-list-item-title v-text="item.text" @click="redirect(item.text)"></v-list-item-title> -->
               <v-list-item-title v-text="item.name"></v-list-item-title>
             </v-list-item-content>
           </v-list-item>
-        </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
 </template>
@@ -47,19 +44,20 @@ export default {
       ],
     };
   },
-  methods: {
-    // redirect(here) {
-    //   if (this.drawer) this.drawer=!this.drawer;
-    //   this.$emit('toggle', here)
-    // }
-  }
+  destroyed(){
+    this.$emit('activate-drawer')
+  },
+  computed:{
+      updateDrawer(transition=false){
+        if(transition && this.active) return
+        return this.$emit('activate-drawer')
+      }
+  },
 };
 </script>
 
-<style>
+<style scoped>
 #drawer {
-  z-index: 110;
-  position: absolute;
-  height: 600px;
+  position: fixed;
 }
 </style>

@@ -1,34 +1,50 @@
 <template>
   <v-app>
-    <Hero />
-    <AppBar />
-    <About />
-    <Projects />
-    <Work />
-    <Education />
-    <Footer />
+    <!-- <app-bar v-on:activate-drawer="activateDrawer" />
+    <drop-down :active="drawer" v-on:activate-drawer="activateDrawer" class="hidden-md-and-up" /> -->
+    <the-app-bar />
+    <hero />
+    <about />
+    <projects />
+    <work />
+    <education />
+    <page-footer />
   </v-app>
 </template>
 
 <script>
-import Hero from './components/Hero.vue'
-import Projects from './components/Projects.vue'
-import About from './components/About.vue'
-import Education from './components/Education.vue'
-import Work from './components/Work.vue'
-import Footer from './components/Footer.vue'
-import AppBar from './components/AppBar.vue'
+import Hero from './components/Hero'
+import Projects from './components/Projects'
+import About from './components/About'
+import Education from './components/Education'
+import Work from './components/Work'
+import PageFooter from './components/PageFooter'
+// import AppBar from './components/AppBar'
+// import DropDown from './components/DropDown'
+import TheAppBar from './components/TheAppBar'
 
 export default {
   name: 'App',
   components: {
-    AppBar,
+    // DropDown,
+    // AppBar,
+    TheAppBar,
     Hero,
     Projects,
     About,
     Education,
     Work,
-    Footer
+    PageFooter,
+  },
+  data(){
+    return {
+      drawer: false,
+    }
+  },
+  methods:{
+    activateDrawer(){
+      this.drawer = !this.drawer;
+    }
   }
 }
 </script>
@@ -36,7 +52,7 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 body{
-  margin: 0;
+  /* margin: 0; */
 }
 #app {
   position: relative;

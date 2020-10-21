@@ -15,7 +15,7 @@
       </v-btn>
     </v-toolbar-items>
     <v-toolbar-items class="hidden-md-and-up">
-        <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+        <v-app-bar-nav-icon @click.stop="updateDrawer()"></v-app-bar-nav-icon>
         <drop-down :active="drawer"></drop-down>
     </v-toolbar-items>
   </v-app-bar>
@@ -46,6 +46,11 @@ export default {
   },
   destroyed () {
     window.removeEventListener('scroll', this.handleScroll);
+  },
+  computed:{
+      updateDrawer(){
+          return this.$emit('activate-drawer')
+      }
   },
   methods: {
     handleScroll() {
