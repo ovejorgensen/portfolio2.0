@@ -14,14 +14,24 @@
         {{ el.name }}
       </v-btn>
     </v-toolbar-items>
+    <v-toolbar-items class="hidden-md-and-up">
+        <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+        <drop-down :active="drawer"></drop-down>
+    </v-toolbar-items>
   </v-app-bar>
 </template>
 
 <script>
+import DropDown from '../components/DropDown';
+
 export default {
   name: "AppBar",
+  components: {
+      DropDown
+  },
   data() {
     return {
+      drawer: false,
       content: [
         { icon: "mdi-account", name: "About", scroll: ".about"},
         { icon: "mdi-check-circle", name: "Projects", scroll: ".projects"},
@@ -55,7 +65,7 @@ export default {
 .bar {
   position: sticky;
   opacity: 0;
-  top: '-70',
+  /* top: '-70', */
 }
 @keyframes fadeIn {
 0% {opacity:0;}

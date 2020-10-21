@@ -1,9 +1,9 @@
 <template>
   <div class="edu">
     <h1>Education</h1>
-    <v-container>
-      <v-row>
-        <v-col cols="6">
+    <v-container fluid>
+      <v-row align="center" justify="center">
+        <v-col xl="6" lg="6" md="6" sm="12" xs="12" cols="12">
           <v-timeline dense class="timeline">
             <v-timeline-item v-for="(el, id) in content" :key="id" large>
               <template v-slot:icon>
@@ -23,7 +23,7 @@
             </v-timeline-item>
           </v-timeline>
         </v-col>
-        <v-col cols="6" justify="center">
+        <v-col xl="6" lg="6" md="6" sm="12" xs="12" cols="12" justify="center">
           <img class="image" src="../../src/assets/worldmap.png" />
         </v-col>
       </v-row>
@@ -69,9 +69,9 @@ export default {
   margin-top: 50px;
   text-align: center;
 }
-.timeline {
+/* .timeline {
   float: left;
-}
+} */
 .edu h1 {
   margin: 100px 0 50px 0;
 }
@@ -79,9 +79,9 @@ export default {
   display: inline-block;
 }
 .image{
-  width: 100%;
+  width: 80%;
   height: auto;
-  display: inline-block;
-  position: relative;
+  /* display: inline-block; */
+  /* position: relative; */
 }
 </style>

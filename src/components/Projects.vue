@@ -3,14 +3,15 @@
     <v-row  class="head" justify="center">
       <h1>My Projects</h1>
     </v-row>
-    <v-row class="main-row" align="center">
+    <v-row class="main-row" justify="center" align="center">
       <v-col
         v-for="card in cards"
         :key="card.title"
         cols="12"
+        xl="3"
         lg="4"
         md="6"
-        sm="12"
+        sm="6"
         xs="12">
       <!-- :href="project.url" -->
       <v-card hover height="100%">

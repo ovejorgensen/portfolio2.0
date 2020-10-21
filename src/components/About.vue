@@ -3,13 +3,13 @@
     <h1>About</h1>
     <v-container>
       <v-row align="center" justify="center">
-        <v-col cols="3">
+        <v-col lg="3" md="3" sm="12" xs="12" cols="12">
           <v-list-item-avatar size="200">
             <v-img src="../../src/assets/ove.jpg"> </v-img>
           </v-list-item-avatar>
         </v-col>
         <!-- <v-col cols="1"></v-col> -->
-        <v-col cols="9">
+        <v-col xl="6" lg="6" md="9" sm="9" xs="12" cols="12">
           <p>
             Hi, my name is Ove Jørgensen. I am currently enrolled in a Master's
             degree at the University of Stavanger where I'm studying Data
