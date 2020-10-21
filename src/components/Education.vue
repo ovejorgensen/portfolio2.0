@@ -1,7 +1,7 @@
 <template>
   <div class="edu">
     <h1>Education</h1>
-    <v-container fluid>
+    <v-container>
       <v-row align="center" justify="center">
         <v-col xl="6" lg="6" md="6" sm="12" xs="12" cols="12">
           <v-timeline dense class="timeline">
@@ -79,7 +79,7 @@ export default {
   display: inline-block;
 }
 .image{
-  width: 80%;
+  width: 90%;
   height: auto;
   /* display: inline-block; */
   /* position: relative; */

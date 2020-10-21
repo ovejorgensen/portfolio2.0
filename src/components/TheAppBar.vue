@@ -60,7 +60,7 @@ export default {
         { icon: "mdi-check-circle", name: "Projects", scroll: ".projects" },
         { icon: "mdi-folder", name: "Work", scroll: ".work" },
         { icon: "mdi-school", name: "Education", scroll: ".edu" },
-        { icon: "mdi-email", name: "Contact", scroll: ".contact" },
+        { icon: "mdi-email", name: "Contact", scroll: ".footah" },
       ],
     };
   },

@@ -20,7 +20,7 @@
             I created this website as a way to show of some of my work, but also
             as a playground and a way for me to further improve my
             web-programming skills. The front-end has been created using Vue and
-            Vuetify, and it is hosted on AWS using AWS Amplify.
+            the Vuetify component library, and it is hosted on AWS using AWS Amplify.
           </p>
         </v-col>
       </v-row>

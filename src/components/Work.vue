@@ -13,25 +13,30 @@
             information.
         </v-col>
       </v-row>
-      <v-row style="margin-top:25px" class="main-row" justify="center" align="center">
-        <v-col xl="6" lg="6" md="9" sm="9" xs="12" cols="12">
-          <v-card class="mx-auto cards" max-width="400">
+      <v-row style="margin-top:25px" justify="center" align="center">
+        <v-col style="max-width:400px" xl="6" lg="6" md="9" sm="9" xs="12" cols="12">
+          <v-card hover height="100%" xl="6" lg="6" md="9" sm="9" xs="12" cols="12">
             <v-img
-              class="white--text align-end"
-              height="200px"
-              src="../../src/assets/wisdom.png"
-            >
-              <v-card-title class="ctitle">The WISDOM Project</v-card-title>
+            height="200px"
+            src="../../src/assets/wisdom.png">
             </v-img>
 
-            <v-card-subtitle class="pb-0"
-              >Windmaster Technologies</v-card-subtitle
-            >
-            <v-card-text class="text--primary">My current project</v-card-text>
+            <v-divider />
+
+            <v-card-text>
+              <h3 class="mb-2">The WISDOM Project</h3>
+              <v-card-subtitle
+                class="pb-0"
+                style="padding-top:0"
+                >
+                Windmaster Technologies
+              </v-card-subtitle>
+            </v-card-text>
+
+            <v-card-text style="height:60px" class="text--primary">My current project</v-card-text>
           </v-card>
         </v-col>
         <v-col
-          style="text-align: left"
           xl="6"
           lg="6"
           md="9"
@@ -64,7 +69,7 @@ export default {
 
 <style scoped>
 .cards {
-  text-align: left;
+  /* text-align: left; */
 }
 .work {
   text-align: center;
