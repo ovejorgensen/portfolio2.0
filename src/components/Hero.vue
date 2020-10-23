@@ -1,17 +1,27 @@
 <template>
   <section class="hello">
+    <hero-animation class="anim"></hero-animation>
     <h1>Ove Jørgensen</h1>
     <div class="arrow"></div>
   </section>
 </template>
 
 <script>
+import HeroAnimation from '../components/HeroAnimation'
+
 export default {
-  name: "Hero"
+  name: "Hero",
+  components:{
+    HeroAnimation
+  }
 };
 </script>
 
 <style scoped>
+.anim{
+  position: absolute;
+  z-index: 1000;
+}
 .hello {
   /* position: relative; */
   color: white;
@@ -22,6 +32,7 @@ export default {
 .hello h1 {
 
   position: relative;
+  z-index: 2;
   font-size: 40px;
   top: 45%;
   transform: translateY(-50%);

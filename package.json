@@ -11,6 +11,7 @@
     "@aws-amplify/ui-vue": "^0.2.8",
     "aws-amplify": "^3.0.18",
     "core-js": "^3.6.5",
+    "p5": "^1.1.9",
     "vue": "^2.6.11",
     "vue-fullpage.js": "^0.1.5",
     "vue-scrollto": "^2.19.1",
