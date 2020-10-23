@@ -94,7 +94,7 @@ export default {
   margin: 0 5px 10px 0;
 }
 .contain{
-    width: 100vw;
+    /* width: 100vw; */
     margin-top: 50px;
 }
 .head {
