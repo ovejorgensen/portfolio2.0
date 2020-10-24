@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <hero />
-    <the-app-bar />
+    <the-app-bar class="the-app-bar" />
     <v-container class="outer-contain">
       <about />
       <projects />
