@@ -13,8 +13,7 @@
         md="6"
         sm="6"
         xs="12">
-      <!-- :href="project.url" -->
-      <v-card hover height="100%">
+      <v-card :href="card.route" hover height="100%">
         <v-img
         height="200px"
         v-bind:src="require('../../src/assets/' + card.src)">
@@ -36,15 +35,7 @@
         <v-card-actions>
           <v-btn color="orange" :href="card.github" target="_blank" text>GitHub</v-btn>
         </v-card-actions>
-        <!-- <v-divider></v-divider> -->
-        <!-- <v-chip
-          class="white--text chip-class"
-          color=info
-          small
-          v-for="tag in card.tags"
-          :key="tag.id">
-          {{ tag }}
-        </v-chip> -->
+
       </v-card>
       </v-col>
     </v-row>
@@ -61,6 +52,7 @@ export default {
         subtitle: "Data Presentation and Analysis",
         info: "Bachelor's Project presented for a degree in computer science",
         open: "More info",
+        // route: "/galaga",
         src: "bach.png",
         github: "https://github.com/ovejorgensen/bachelor_website",
         tags: ["JavaScript", "Node.js", "Express.js", "Three.js"]
@@ -71,6 +63,7 @@ export default {
         info: "Arcade game created in JavaScript with p5.js",
         open: "Try it!",
         src: "galaga.png",
+        route: "https://galaga.ovekj.no",
         github: "https://github.com/ovejorgensen/galaga",
         tags: ["JavaScript", "p5.js"]
       },
@@ -79,6 +72,7 @@ export default {
         subtitle: "Website",
         info: "One of my first websites, made using jQuery, Bootstrap and Less. Hosted on GitHub Pages.",
         open: "Check it out",
+        // route: "/galaga",
         src: "old.png",
         link: "ovejorgensen.github.io",
         github: "https://github.com/ovejorgensen/ovejorgensen.github.io",

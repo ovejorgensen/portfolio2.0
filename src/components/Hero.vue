@@ -3,8 +3,8 @@
     <hero-animation class="anim"></hero-animation>
     <h1>Ove Jørgensen</h1>
     <!-- <div class="arrow"></div> -->
-    <div class="center-con">
-      <div class="round" v-on:click="scrollHandler()">
+    <div class="arrow-wrap">
+      <div class="arrow" v-on:click="scrollHandler()">
           <span></span>
           <span></span>
           <span></span>
@@ -41,7 +41,6 @@ export default {
   z-index: 10;
 }
 .hello {
-  /* position: relative; */
   color: white;
   background-color: #264653;
   width: 100vw;
@@ -57,7 +56,7 @@ export default {
   -ms-transform: translateY(-50%);
 }
 
-.center-con {
+.arrow-wrap {
     display: flex;
     height: 100vh;
     position: relative;
@@ -67,26 +66,28 @@ export default {
     z-index: 100;
 }
 
-.round {
+.arrow {
     position: relative;
-    /* border: 0px solid #fff; */
     width: 100px;
     height: 100px;
-    border-radius: 10%;
     z-index: 100;
 }
 
+.arrow:hover{
+  cursor:pointer;
+}
+
 span {
+    display: block;
+    position: absolute;
     z-index: 999;
     height: 3px;
     margin:1px;
-    background: #fff;
+    background: white;
     transition: 0.4s ease;
 }
 
 span:first-child {
-    display: block;
-    position: absolute;
     transform: rotate(45deg);
     left: 15%;
     bottom: 40%;
@@ -94,8 +95,6 @@ span:first-child {
 }
 
 span:nth-child(2) {
-    display: block;
-    position: absolute;
     transform: rotate(-45deg);
     left: 43%;
     bottom: 40%;
@@ -103,8 +102,6 @@ span:nth-child(2) {
 }
 
 span:nth-child(3) {
-    display: block;
-    position: absolute;
     transform: rotate(45deg);
     left: 26%;
     bottom: 54%;
@@ -112,8 +109,6 @@ span:nth-child(3) {
 }
 
 span:nth-child(4) {
-    display: block;
-    position: absolute;
     transform: rotate(-45deg);
     left: 45%;
     bottom: 54%;
@@ -121,8 +116,6 @@ span:nth-child(4) {
 }
 
 span:nth-child(5) {
-    display: block;
-    position: absolute;
     transform: rotate(45deg);
     left: 37%;
     bottom: 68%;
@@ -130,8 +123,6 @@ span:nth-child(5) {
 }
 
 span:nth-child(6) {
-    display: block;
-    position: absolute;
     transform: rotate(-45deg);
     left: 47%;
     bottom: 68%;
@@ -139,8 +130,6 @@ span:nth-child(6) {
 }
 
 span:nth-child(7) {
-    display: block;
-    position: absolute;
     transform: rotate(45deg);
     left: 37%;
     bottom: 68%;
@@ -148,104 +137,41 @@ span:nth-child(7) {
 }
 
 span:nth-child(8) {
-    display: block;
-    position: absolute;
     transform: rotate(-45deg);
     left: 47%;
     bottom: 68%;
     width: 17px;
 }
 
-/* .round:hover span:nth-child(1) {
-    transform: rotate(-135deg);
-}
-
-.round:hover span:nth-child(2) {
-    transform: rotate(135deg);
-} */
-
-/* .round:hover span:nth-child(3) {
-    transform: rotate(225deg);
-}
-
-.round:hover span:nth-child(4) {
-    transform: rotate(-225deg);
-} */
-
-/* .round:hover span:nth-child(5) {
-    transform: rotate(225deg);
-}
-
-.round:hover span:nth-child(6) {
-    transform: rotate(-225deg);
-} */
-
-.round span:nth-child(1) {
-    animation: mover1 3s alternate infinite;
-}
-
-.round span:nth-child(2) {
-    animation: mover2 3s alternate infinite;
-}
-
-.round span:nth-child(3) {
-}
-
-.round span:nth-child(4) {
-}
-
-.round span:nth-child(5) {
-}
-
-.round span:nth-child(6) {
-}
-
-/* @keyframes mover1 {
-    0% { 
-      transform: translateY(0) rotate(45deg); 
-      }
-    100% { 
-      transform: translateY(-10px) rotate(45deg); 
-      }
-}
-@keyframes mover2 {
-    0% { 
-      transform: translateY(0) rotate(-45deg); 
-      }
-    100% { 
-      transform: translateY(-10px) rotate(-45deg); 
-      }
-} */
-
-.round:hover span:nth-child(1) {
+.arrow:hover span:nth-child(1) {
     transform: translateX(-16px) translateY(-10px) rotate(45deg) scale(2, 1);
 }
 
-.round:hover span:nth-child(2) {
+.arrow:hover span:nth-child(2) {
     transform: translateX(16px) translateY(-10px) rotate(-45deg) scale(2, 1);
 }
 
-.round:hover span:nth-child(3) {
+.arrow:hover span:nth-child(3) {
     transform: rotate(225deg) translate(10px, 10px);
 }
 
-.round:hover span:nth-child(4) {
+.arrow:hover span:nth-child(4) {
     transform: rotate(-225deg) translate(-10px, 10px);
 }
 
-.round:hover span:nth-child(5) {
+.arrow:hover span:nth-child(5) {
     transform: translateX(-25px) translateY(-40px) rotate(-45deg) scale(5.1, 1);
 }
 
-.round:hover span:nth-child(6) {
+.arrow:hover span:nth-child(6) {
     transform: translateX(25px) translateY(-40px) rotate(45deg) scale(5.1, 1);
 }
 
-.round:hover span:nth-child(7) {
+.arrow:hover span:nth-child(7) {
     transform: translateX(5px) translateY(-20px) rotate(90deg) scale(2, 1);
 }
 
-.round:hover span:nth-child(8) {
+.arrow:hover span:nth-child(8) {
     transform: translateX(-5px) translateY(-20px) rotate(-90deg) scale(2, 1);
 }
 </style>

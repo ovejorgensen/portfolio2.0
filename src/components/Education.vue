@@ -66,7 +66,6 @@ export default {
 
 <style scoped>
 .edu {
-  margin-top: 50px;
   text-align: center;
 }
 /* .timeline {

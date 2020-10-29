@@ -61,8 +61,9 @@ export default {
       drawer: false,
       content: [
         { icon: "mdi-account", name: "About", scroll: ".about" },
-        { icon: "mdi-check-circle", name: "Projects", scroll: ".projects" },
-        { icon: "mdi-folder", name: "Work", scroll: ".work" },
+        { icon: "mdi-book-check", name: "Projects", scroll: ".projects" },
+        { icon: "mdi-notebook-edit", name: "Work", scroll: ".work" },
+        { icon: "mdi-check-circle", name: "Achievements", scroll: ".achievements" },
         { icon: "mdi-school", name: "Education", scroll: ".edu" },
         { icon: "mdi-email", name: "Contact", scroll: ".footah" },
       ],

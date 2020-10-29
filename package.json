@@ -14,6 +14,7 @@
     "p5": "^1.1.9",
     "vue": "^2.6.11",
     "vue-fullpage.js": "^0.1.5",
+    "vue-router": "^3.4.7",
     "vue-scrollto": "^2.19.1",
     "vuetify": "^2.2.11"
   },
