@@ -30,23 +30,16 @@
           sm="9"
           xs="12"
           cols="12"
+          href="https://pokemon.ovekj.no"
+          target="_blank"
         >
           <v-img height="200px" src="../../src/assets/capathon.png"> </v-img>
-            <!-- <v-carousel>
-                <v-carousel-item
-                v-for="(data,i) in data"
-                :key="i"
-                v-bind:src="require('../../src/assets/' + data.img)"
-                
-                ></v-carousel-item>
-            </v-carousel>
-          <v-divider /> -->
-
           <v-card-text>
             <h3 class="mb-2">CapAthon</h3>
             <v-card-subtitle class="pb-0" style="padding-top:0">
               Capgemini
             </v-card-subtitle>
+              <a class="linker" href="https://pokemon.ovekj.no" target="_blank" text>pokemon.ovekj.no<v-icon class="linker-icon" small>mdi-open-in-new</v-icon></a>
           </v-card-text>
         </v-card>
       </v-col>
@@ -69,6 +62,12 @@ export default {
 </script>
 
 <style scoped>
+.linker{
+  text-decoration: none;
+}
+i.linker-icon{
+  color: #1976d2;
+}
 .achievements {
   text-align: center;
 }

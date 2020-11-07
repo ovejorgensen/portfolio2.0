@@ -13,7 +13,7 @@
         md="6"
         sm="6"
         xs="12">
-      <v-card :href="card.route" hover height="100%">
+      <v-card :href="card.route" target="_blank" hover height="100%">
         <v-img
         height="200px"
         v-bind:src="require('../../src/assets/' + card.src)">
@@ -31,9 +31,10 @@
         </v-card-text>
 
         <v-card-text style="height:60px" class="text--primary" v-text="card.info"></v-card-text>
-        
+
         <v-card-actions>
           <v-btn color="orange" :href="card.github" target="_blank" text>GitHub</v-btn>
+          <a class="linker" v-if="card.route" :href="card.route" target="_blank" text>{{card.route.split("https://")[1]}}<v-icon class="linker-icon" small>mdi-open-in-new</v-icon></a>
         </v-card-actions>
 
       </v-card>
@@ -52,7 +53,6 @@ export default {
         subtitle: "Data Presentation and Analysis",
         info: "Bachelor's Project presented for a degree in computer science",
         open: "More info",
-        // route: "/galaga",
         src: "bach.png",
         github: "https://github.com/ovejorgensen/bachelor_website",
         tags: ["JavaScript", "Node.js", "Express.js", "Three.js"]
@@ -72,7 +72,7 @@ export default {
         subtitle: "Website",
         info: "One of my first websites, made using jQuery, Bootstrap and Less. Hosted on GitHub Pages.",
         open: "Check it out",
-        // route: "/galaga",
+        route: "https://ovejorgensen.github.io",
         src: "old.png",
         link: "ovejorgensen.github.io",
         github: "https://github.com/ovejorgensen/ovejorgensen.github.io",
@@ -84,6 +84,14 @@ export default {
 </script>
 
 <style scoped>
+.linker{
+  text-decoration: none;
+  display: flex;
+  justify-content: right;
+}
+i.linker-icon{
+  color: #1976d2;
+}
 .chip-class{
   margin: 0 5px 10px 0;
 }
