@@ -1,5 +1,5 @@
 # Personal Portfolio Website
 
-Created using Vue. Hosted on AWS using AWS Amplify.
+Created using mostly Vue and Vuetify. Hosted on AWS with the AWS Amplify service.
 
-Live on [ovekj.no](https://www.ovekj.com)
+Live at [ovekj.no](https://www.ovekj.no)
